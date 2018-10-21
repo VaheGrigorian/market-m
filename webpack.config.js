@@ -29,7 +29,13 @@ module.exports = {
               "@babel/plugin-transform-runtime",
               "@babel/plugin-proposal-object-rest-spread",
               "react-hot-loader/babel",
-              ["react-css-modules", { webpackHotModuleReloading: true }]
+              [
+                "react-css-modules",
+                {
+                  webpackHotModuleReloading: true,
+                  generateScopedName: "[name]__[local]___[hash:base64:5]"
+                }
+              ]
             ]
           }
         }
@@ -44,7 +50,7 @@ module.exports = {
             options: {
               modules: true,
               sourceMap: true,
-              localIdentName: "[path]___[name]__[local]___[hash:base64:5]",
+              localIdentName: "[name]__[local]___[hash:base64:5]",
               importLoaders: 1
             }
           },
