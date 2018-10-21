@@ -1,3 +1,7 @@
 import React from "react";
+import { App } from "./app";
+import { hot } from "react-hot-loader";
 
-export default () => <div>Hello Vahe</div>;
+export default (process.env.NODE_ENV === "development"
+  ? hot(module)(App)
+  : App);
