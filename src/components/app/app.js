@@ -1,11 +1,8 @@
 import React from "react";
-
-import "./button.css";
+import Button from "../button";
 
 export const App = () => (
   <div>
-    <button type="button" styleName="button">
-      Click me
-    </button>
+    <Button>Click</Button>
   </div>
 );

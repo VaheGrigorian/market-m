@@ -17,6 +17,8 @@
     "@storybook/addons": "4.0.0-rc.1",
     "@storybook/cli": "4.0.0-rc.1",
     "@storybook/react": "4.0.0-rc.1",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
@@ -24,6 +26,8 @@
     "file-loader": "^2.0.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.6.0",
     "mini-css-extract-plugin": "^0.4.4",
     "postcss": "^7.0.5",
     "postcss-import": "^12.0.0",
@@ -31,6 +35,7 @@
     "postcss-preset-env": "^6.1.2",
     "postcss-url": "^8.0.0",
     "react-hot-loader": "^4.3.11",
+    "react-testing-library": "^5.2.0",
     "style-loader": "^0.23.1",
     "stylelint-config-recommended": "^2.1.0",
     "webpack": "^4.21.0",
@@ -52,6 +57,13 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "webpack --mode=production",
-    "start": "webpack-dev-server --hot"
+    "start": "webpack-dev-server --hot",
+    "test": "jest"
+  },
+  "jest":{
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
   }
 }
